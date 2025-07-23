@@ -17,3 +17,6 @@ There is zero difficulty in programming. Off-by-one errors
 "For more information, send your request to /dev/null"
 "The instructions are located in /dev/urandom"
 unsigned char main[] = { 0 };
+#define ever (;;)
+#define true 0
+#define false 1
