@@ -20,3 +20,8 @@ unsigned char main[] = { 0 };
 #define ever (;;)
 #define true 0
 #define false 1
+#define private public
+#define public private
+#define struct union
+#define memcpy strncpy
+#define malloc(x) ({ (void)malloc(x); errno = ENOMEM; NULL; })
