@@ -54,7 +54,11 @@ int main(int argc, char *argv[])
 		}
 	}
 
+#ifdef __APPLE__
+	sranddev();
+#else
 	srand(time(NULL) + clock() + counter);
+#endif
 
 	/* Open the wisdomfile, check lines, generate a number in that
 	 * lines range and print it */
