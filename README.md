@@ -5,6 +5,8 @@ Gives you programming ~~jokes~~ wisdom
 
 ```sh
 $ ./build.sh
+# if you want
+$ export WISDOMFILE = "/path/to/wisdom/wisdomfile"
 ```
 
 ## Where is the ~~jokes~~ wisdom stored?

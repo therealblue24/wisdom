@@ -1,4 +1,13 @@
 /* Copyright (C) 2025 therealblue24 under the MIT license */
+
+#if defined(__linux__) || defined(__APPLE__) || defined(__unix__)
+#define UNIXLIKE (1)
+#endif
+
+#ifdef UNIXLIKE
+#include <unistd.h>
+#endif /* UNIXLIKE */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -62,11 +71,28 @@ int main(int argc, char *argv[])
 
 	/* Open the wisdomfile, check lines, generate a number in that
 	 * lines range and print it */
+#ifdef UNIXLIKE
+	char *fname = strdup("wisdomfile"); /* wisdomfile is default */
+	/* check if there is an env variable where we should find the wisdomfile */
+	char *possible_wisdomfile = getenv("WISDOMFILE");
+	/* if so, use it */
+	if(possible_wisdomfile) {
+		free(fname);
+		fname = strdup(possible_wisdomfile);
+	}
+	FILE *wisdom = fopen(fname, "r");
+#else
 	FILE *wisdom = fopen("wisdomfile", "r");
+#endif /* UNIXLIKE */
+
 	size_t lines = count_lines(wisdom);
 	size_t line_to_print = rand() % lines;
 	print_line(wisdom, line_to_print);
 	putchar('\n');
+
+#ifdef UNIXLIKE
+	free(fname);
+#endif
 
 	fclose(wisdom);
 	return 0;

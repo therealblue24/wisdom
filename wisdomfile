@@ -25,3 +25,12 @@ unsigned char main[] = { 0 };
 #define struct union
 #define memcpy strncpy
 #define malloc(x) ({ (void)malloc(x); errno = ENOMEM; NULL; })
+"I just sorted the list and used binary search, what's slow about that?"
+`printf` can act like a mutex
+Ragebait has existed since 1985 it's called C++
+Haskell programmers cannot touch grass, as it may have side effects
+C programmers forget what convenience is
+Assembly programmers forget what syntax is
+Machine code programmers forget what text is
+// Behold! Code that works for reasons unexplained!
+Linux users after someone said `gcc` is the `GNU C Compiler`:
