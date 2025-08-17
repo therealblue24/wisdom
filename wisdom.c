@@ -51,15 +51,15 @@ int main(int argc, char *argv[])
 	volatile uint64_t counter = 1 + clock();
 
 	/* Try to screw around with the CPU */
-	/* collatz conjecture but wrong */
+	/* collatz conjecture used for optimal unpredictability */
 	for(int i = 0; i < 100; i++) {
 		counter *= counter + 1;
 		/* intentionally screw around with the branch predictor
 		 * to get random timing */
 		if(counter & 1) {
-			counter >>= 1;
-		} else {
 			counter = (counter * 3) + 1;
+		} else {
+			counter >>= 1;
 		}
 	}
 
