@@ -25,7 +25,7 @@ static size_t count_lines(FILE *f)
 }
 
 /* Prints line `line` in the file by counting newlines until we reach
- * the target line and then print characters we receieve until we hit
+ * the target line and then print characters we receive until we hit
  * another newline. */
 static void print_line(FILE *f, size_t line)
 {
