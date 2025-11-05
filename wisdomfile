@@ -34,3 +34,4 @@ Assembly programmers forget what syntax is
 Machine code programmers forget what text is
 // Behold! Code that works for reasons unexplained!
 Linux users after someone said `gcc` is the `GNU C Compiler`:
+#define true (!!(__LINE__ & 15)) /* job security */
